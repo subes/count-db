@@ -6,7 +6,7 @@
 
     <groupId>com.github.koendeschacht</groupId>
     <artifactId>count-db</artifactId>
-    <version>master-SNAPSHOT</version>
+    <version>1.1.12-inv</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A fast key-value store written in Java that outperforms levelDB, kyoto cabinet and rocksDB
@@ -30,16 +30,6 @@
         <developerConnection>scm:git:git@github.com:koendeschacht/count-db.git</developerConnection>
         <url>git@github.com:koendeschacht/count-db.git</url>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -85,28 +75,42 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
+    <distributionManagement>
+		<repository>
+			<id>invesdwin-oss</id>
+			<name>invesdwin-oss</name>
+			<url>https://invesdwin.de/repo/invesdwin-oss</url>
+		</repository>
+		<snapshotRepository>
+			<id>invesdwin-oss</id>
+			<name>invesdwin-oss</name>
+			<url>https://invesdwin.de/repo/invesdwin-oss</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>invesdwin-oss</id>
+			<url>https://invesdwin.de/repo/invesdwin-oss-remote</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>invesdwin-oss</id>
+			<url>https://invesdwin.de/repo/invesdwin-oss-remote</url>
+		</pluginRepository>
+	</pluginRepositories>
 
     <dependencies>
         <dependency>
             <groupId>com.github.koendeschacht</groupId>
             <artifactId>bow-utils</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>1.1.12-inv</version>
         </dependency>
         <dependency>
             <groupId>com.github.koendeschacht</groupId>
             <artifactId>bow-utils-extra</artifactId>
-            <version>master-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.koendeschacht</groupId>
-            <artifactId>mini-dep-i</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>1.1.12-inv</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
